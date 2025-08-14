@@ -7,16 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div id="dropdown" class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
     <header>
         <h1>Pixin Dim</h1>
         <p>Your Go-To PC Build & Upgrade Shop</p>
     </header>
 
     <main>
-        <div class="buttons">
-            <a href="order.html" class="btn">Place an Order</a>
-            <a href="upgrade.html" class="btn">Place an Upgrade</a>
+        <div class="button-container">
+            <a href="order.html" class="btn-rectangle">Place an Order</a>
+            <a href="upgrade.html" class="btn-rectangle">Place an Upgrade</a>
         </div>
     </main>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("dropdown");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
 </body>
 </html>
