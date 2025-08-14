@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixin Dim - Custom PCs</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Pixin Dim</h1>
+        <p>Custom PC builds and upgrades in Croatia</p>
+    </header>
+
+    <main>
+        <section id="builds">
+            <h2>Example Builds</h2>
+            <div class="build">
+                <h3>Dream Build</h3>
+                <p>CPU: Ryzen 7 8700F | GPU: RTX 5060 | Price: €1100</p>
+            </div>
+            <div class="build">
+                <h3>Upgrade</h3>
+                <p>RAM/SSD upgrades starting at €50</p>
+            </div>
+        </section>
+
+        <section id="order">
+            <h2>Place an Order</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="details">Order Details:</label><br>
+                <textarea id="details" name="details" rows="4" required></textarea><br><br>
+
+                <label for="payment">Payment Method:</label><br>
+                <select id="payment" name="payment">
+                    <option value="bank">Bank Transfer</option>
+                    <option value="cash">Cash</option>
+                </select><br><br>
+
+                <button type="submit">Submit Order</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Pixin Dim. All rights reserved.</p>
+    </footer>
+</body>
+</html>
