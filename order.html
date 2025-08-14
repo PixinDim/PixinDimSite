@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Place Order - Pixin Dim</title>
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Hamburger Menu -->
   <div class="hamburger-menu">
     <div class="hamburger" onclick="toggleMenu()"><span></span></div>
     <div id="dropdown" class="dropdown-content">
@@ -19,21 +20,18 @@
 
   <section class="form-section fade-up">
     <h2>Place Your Order</h2>
-    <form action="https://formsubmit.co/pixindim86@gmail.com" method="POST">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="index.html">
-
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <label for="name">Full Name</label>
-      <input type="text" name="name" id="name" required>
+      <input type="text" id="name" name="name" required>
 
       <label for="email">Email</label>
-      <input type="email" name="email" id="email" required>
+      <input type="email" id="email" name="_replyto" required>
 
       <label for="budget">Budget (€)</label>
-      <input type="number" name="budget" id="budget" required>
+      <input type="number" id="budget" name="budget" required>
 
       <label for="details">Order Details</label>
-      <textarea name="details" id="details" rows="5" required></textarea>
+      <textarea id="details" name="details" rows="5" required></textarea>
 
       <button type="submit" class="btn">Submit Order</button>
     </form>
