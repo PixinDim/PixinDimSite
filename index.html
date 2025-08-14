@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pixin Dim - Custom PC Shop</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css"> <!-- Make sure style.css is in the same folder -->
 </head>
 <body>
-  <!-- Navbar / Hamburger Menu -->
+  <!-- Hamburger Menu -->
   <div class="hamburger-menu">
     <div class="hamburger" onclick="toggleMenu()">
       <span></span>
@@ -31,24 +31,24 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="https://images.unsplash.com/photo-1629228597632-3b49a5f6b91f?auto=format&fit=crop&w=800&q=80" alt="Hero PC">
+      <img src="https://unsplash.com/photos/KHSPGJ3zP0M/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU1MTYxOTI1fA&force=true" alt="Hero PC">
     </div>
   </section>
 
   <!-- Features Section -->
   <section class="features">
     <div class="feature fade-up">
-      <img src="https://images.unsplash.com/photo-1558645789-4f68c52bce7d?auto=format&fit=crop&w=200&q=80" alt="Fast Build">
+      <img src="https://unsplash.com/photos/HUJDz6CJEaM/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU1MTYwOTAzfA&force=true" alt="Fast Build">
       <h3>Fast Builds</h3>
       <p>We deliver your custom PC quickly and reliably.</p>
     </div>
     <div class="feature fade-up">
-      <img src="https://images.unsplash.com/photo-1587202372775-00137a65d4f1?auto=format&fit=crop&w=200&q=80" alt="Quality Parts">
+      <img src="https://unsplash.com/photos/vWgoeEYdtIY/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzU1MTY0MjMxfA&force=true" alt="GPU">
       <h3>Quality Parts</h3>
       <p>Only high-quality components for your builds.</p>
     </div>
     <div class="feature fade-up">
-      <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=200&q=80" alt="Support">
+      <img src="https://unsplash.com/photos/BeVGrXEktIk/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8NHx8dGVjaG5pY2FsJTIwc3VwcG9ydHxlbnwwfHx8fDE3NTUxNjQyNjJ8MA&force=true" alt="Support">
       <h3>Expert Support</h3>
       <p>We guide you from choosing parts to setup.</p>
     </div>
@@ -67,13 +67,11 @@
 
   <!-- Scripts -->
   <script>
-    // Hamburger toggle
     function toggleMenu() {
       const menu = document.getElementById("dropdown");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
 
-    // Scroll animations for sections and images
     const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
     const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
@@ -83,7 +81,6 @@
       });
     }, appearOptions);
 
-    // Observe sections and images
     const faders = document.querySelectorAll('.fade-up');
     faders.forEach(fader => appearOnScroll.observe(fader));
 
