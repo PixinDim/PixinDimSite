@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Pixin Dim</title>
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="hamburger-menu">
-    <div class="hamburger" onclick="toggleMenu()"><span></span></div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div id="dropdown" class="dropdown-content">
       <a href="index.html">Home</a>
       <a href="login.html">Login</a>
@@ -17,20 +17,61 @@
     </div>
   </div>
 
-  <section class="form-section fade-up">
-    <h2>Login</h2>
-    <form>
+  <header>
+    <h1>Login</h1>
+    <p>Access your Pixin Dim account</p>
+  </header>
+
+  <main>
+    <form id="loginForm" class="form-box">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
+      <input type="email" id="email" required>
 
       <label for="password">Password</label>
-      <input type="password" id="password" name="password" required>
+      <input type="password" id="password" required>
 
       <button type="submit" class="btn">Login</button>
     </form>
-  </section>
+    <a href="register.html" class="back-link">Don't have an account? Register</a>
+    <br>
+    <a href="index.html" class="back-link">⬅ Back to Home</a>
+  </main>
 
-  <script>
+  <!-- Firebase -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA6iDXltaAXr-YbZlGSLEvgcxR4dJd0ge8",
+      authDomain: "pixindim-e910f.firebaseapp.com",
+      projectId: "pixindim-e910f",
+      storageBucket: "pixindim-e910f.firebasestorage.app",
+      messagingSenderId: "925384750308",
+      appId: "1:925384750308:web:890c766bf7a61118c528f1",
+      measurementId: "G-FHCCXG0QFX"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const loginForm = document.getElementById('loginForm');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          alert('Logged in successfully!');
+          window.location.href = 'index.html'; // Redirect to homepage
+        })
+        .catch((error) => {
+          alert(error.message);
+        });
+    });
+
+    // Hamburger toggle
     function toggleMenu() {
       const menu = document.getElementById("dropdown");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
