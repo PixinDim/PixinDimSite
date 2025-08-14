@@ -8,26 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>Request a PC Upgrade</h1>
+        <h1>Place an Upgrade</h1>
+        <p>Upgrade Your Existing PC</p>
     </header>
 
     <main>
-        <form>
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+        <form class="form-box">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-            <label for="upgrade">Upgrade Type:</label>
-            <input type="text" id="upgrade" name="upgrade" required>
+            <label for="current-specs">Current PC Specs</label>
+            <textarea id="current-specs" name="current-specs" placeholder="CPU, GPU, RAM, etc." rows="4"></textarea>
 
-            <label for="details">Current PC Specs:</label>
-            <textarea id="details" name="details" required></textarea>
+            <label for="upgrade-details">Upgrade Details</label>
+            <textarea id="upgrade-details" name="upgrade-details" placeholder="What do you want upgraded?" rows="4"></textarea>
 
-            <button type="submit">Submit Upgrade Request</button>
+            <button type="submit" class="btn">Submit Upgrade</button>
         </form>
-        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <a href="index.html" class="back-link">⬅ Back to Home</a>
     </main>
 </body>
 </html>
