@@ -5,42 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Pixin Dim</title>
   <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="hamburger-menu">
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div id="dropdown" class="dropdown-content">
-      <a href="index.html">Home</a>
-      <a href="login.html">Login</a>
-      <a href="register.html">Register</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-
-  <header>
-    <h1>Register</h1>
-    <p>Create your Pixin Dim account</p>
-  </header>
-
-  <main>
-    <form id="registerForm" class="form-box">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" required>
-
-      <label for="password">Password</label>
-      <input type="password" id="password" required>
-
-      <button type="submit" class="btn">Register</button>
-    </form>
-    <a href="login.html" class="back-link">Already have an account? Login</a>
-    <br>
-    <a href="index.html" class="back-link">⬅ Back to Home</a>
-  </main>
-
-  <!-- Firebase -->
+  <!-- Firebase SDKs -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
@@ -51,31 +16,63 @@
       projectId: "pixindim-e910f",
       storageBucket: "pixindim-e910f.firebasestorage.app",
       messagingSenderId: "925384750308",
-      appId: "1:925384750308:web:890c766bf7a61118c528f1",
-      measurementId: "G-FHCCXG0QFX"
+      appId: "1:925384750308:web:890c766bf7a61118c528f1"
     };
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
 
-    const registerForm = document.getElementById('registerForm');
-    registerForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      const name = document.getElementById('name').value;
+    window.registerUser = function(event) {
+      event.preventDefault();
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      if(password !== confirmPassword) {
+        alert("Passwords do not match!");
+        return;
+      }
 
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-          alert('Registered successfully!');
-          window.location.href = 'login.html'; // Redirect to login
+          alert("Registration successful!");
+          window.location.href = "login.html";
         })
         .catch((error) => {
           alert(error.message);
         });
-    });
+    }
+  </script>
+</head>
+<body>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <div class="hamburger" onclick="toggleMenu()"><span></span></div>
+    <div id="dropdown" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
 
-    // Hamburger toggle
+  <section class="form-section fade-up">
+    <h2>Register</h2>
+    <form onsubmit="registerUser(event)">
+      <label for="email">Email</label>
+      <input type="email" id="email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required>
+
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" required>
+
+      <button type="submit" class="btn">Register</button>
+    </form>
+  </section>
+
+  <script>
     function toggleMenu() {
       const menu = document.getElementById("dropdown");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
