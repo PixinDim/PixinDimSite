@@ -7,7 +7,6 @@
   <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <!-- Hamburger -->
   <div class="hamburger-menu">
     <div class="hamburger" onclick="toggleMenu()"><span></span></div>
     <div id="dropdown" class="dropdown-content">
@@ -18,10 +17,9 @@
     </div>
   </div>
 
-  <!-- Order Form -->
   <section class="form-section fade-up">
     <h2>Place Your Order</h2>
-    <form action="https://formsubmit.co/pixindim86@gmail.com" method="POST">
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="index.html">
 
@@ -46,17 +44,6 @@
       const menu = document.getElementById("dropdown");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
-
-    const faders = document.querySelectorAll('.fade-up');
-    window.addEventListener('scroll', () => {
-      faders.forEach(fader => {
-        const top = fader.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if(top < windowHeight - 50){
-          fader.classList.add('visible');
-        }
-      });
-    });
   </script>
 </body>
 </html>
