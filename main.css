@@ -16,7 +16,6 @@ body {
 
 /* ============================= */
 /* Links */
-/* ============================= */
 a {
   color: white;
   text-decoration: none;
@@ -28,11 +27,10 @@ a:hover {
 
 /* ============================= */
 /* Header / Hero Section */
-/* ============================= */
 header {
   text-align: center;
-  padding: 80px 20px;
-  background: #444;
+  padding: 100px 20px;
+  background-color: #222;
 }
 
 header h1 {
@@ -47,7 +45,6 @@ header p {
 
 /* ============================= */
 /* Buttons */
-/* ============================= */
 .btn {
   display: inline-block;
   background-color: #d70000; /* ADM Red */
@@ -66,8 +63,7 @@ header p {
 }
 
 /* ============================= */
-/* Form Section */
-/* ============================= */
+/* Forms */
 .form-section {
   max-width: 500px;
   margin: 50px auto;
@@ -83,8 +79,8 @@ header p {
 
 .form-section label {
   display: block;
-  margin-bottom: 6px;
   margin-top: 12px;
+  margin-bottom: 6px;
 }
 
 .form-section input,
@@ -107,7 +103,6 @@ header p {
 
 /* ============================= */
 /* Hamburger Menu */
-/* ============================= */
 .hamburger-menu {
   position: relative;
   padding: 20px;
@@ -127,14 +122,14 @@ header p {
   background-color: white;
   margin: 6px 0;
   border-radius: 2px;
-  transition: 0.3s;
   position: relative;
+  transition: 0.3s;
 }
 
 .dropdown-content {
   display: none;
   flex-direction: column;
-  background-color: #d70000; /* ADM Red */
+  background-color: #d70000;
   position: absolute;
   top: 60px;
   left: 20px;
@@ -154,8 +149,7 @@ header p {
 }
 
 /* ============================= */
-/* Scroll Animation */
-/* ============================= */
+/* Scroll animation */
 .fade-up {
   opacity: 0;
   transform: translateY(20px);
@@ -169,7 +163,6 @@ header p {
 
 /* ============================= */
 /* Images */
-/* ============================= */
 img {
   max-width: 100%;
   display: block;
@@ -179,7 +172,6 @@ img {
 
 /* ============================= */
 /* Footer */
-/* ============================= */
 footer {
   text-align: center;
   padding: 20px;
