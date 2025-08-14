@@ -31,24 +31,24 @@
       </div>
     </div>
     <div class="hero-image">
-      <img src="pc-banner.png" alt="Custom PC">
+      <img src="https://images.unsplash.com/photo-1629228597632-3b49a5f6b91f?auto=format&fit=crop&w=800&q=80" alt="Hero PC">
     </div>
   </section>
 
   <!-- Features Section -->
   <section class="features">
     <div class="feature fade-up">
-      <img src="fast-build.png" alt="Fast Build">
+      <img src="https://images.unsplash.com/photo-1558645789-4f68c52bce7d?auto=format&fit=crop&w=200&q=80" alt="Fast Build">
       <h3>Fast Builds</h3>
       <p>We deliver your custom PC quickly and reliably.</p>
     </div>
     <div class="feature fade-up">
-      <img src="quality-parts.png" alt="Quality Parts">
+      <img src="https://images.unsplash.com/photo-1587202372775-00137a65d4f1?auto=format&fit=crop&w=200&q=80" alt="Quality Parts">
       <h3>Quality Parts</h3>
       <p>Only high-quality components for your builds.</p>
     </div>
     <div class="feature fade-up">
-      <img src="support.png" alt="Support">
+      <img src="https://images.unsplash.com/photo-1593642634367-d91a135587b5?auto=format&fit=crop&w=200&q=80" alt="Support">
       <h3>Expert Support</h3>
       <p>We guide you from choosing parts to setup.</p>
     </div>
@@ -73,25 +73,22 @@
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
 
-    // Scroll animations
-    const faders = document.querySelectorAll('.fade-up');
-
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    // Scroll animations for sections and images
+    const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
       entries.forEach(entry => {
         if (!entry.isIntersecting) return;
         entry.target.classList.add('appear');
-        appearOnScroll.unobserve(entry.target);
+        observer.unobserve(entry.target);
       });
     }, appearOptions);
 
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
+    // Observe sections and images
+    const faders = document.querySelectorAll('.fade-up');
+    faders.forEach(fader => appearOnScroll.observe(fader));
+
+    const images = document.querySelectorAll('.hero-image img, .feature img');
+    images.forEach(img => appearOnScroll.observe(img));
   </script>
 </body>
 </html>
