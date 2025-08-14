@@ -22,28 +22,77 @@ header p {
     margin-top: 0.5rem;
 }
 
-.buttons {
-    margin-top: 3rem;
+/* Hamburger menu */
+.hamburger-menu {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
 }
 
-.btn {
-    display: inline-block;
-    background-color: #d40000; /* ADM red */
+.hamburger {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #d40000;
+}
+
+.dropdown-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: #d40000;
+    border: 1px solid white;
+    min-width: 150px;
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-content a {
     color: white;
-    padding: 1rem 2rem;
-    margin: 1rem;
+    padding: 12px 16px;
     text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: background 0.3s;
+    border-bottom: 1px solid white;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #a00000;
+}
+
+/* Buttons */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.btn-rectangle {
+    display: inline-block;
+    background-color: #d40000; 
+    color: white;
+    padding: 20px 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
     border: none;
+    border-radius: 4px;
+    transition: background 0.3s, transform 0.2s;
     cursor: pointer;
 }
 
-.btn:hover {
-    background-color: #a00000; /* Darker red */
+.btn-rectangle:hover {
+    background-color: #a00000;
+    transform: scale(1.05);
 }
 
+/* Form styling */
 .form-box {
     max-width: 500px;
     margin: 2rem auto;
@@ -72,6 +121,22 @@ input, textarea {
 input:focus, textarea:focus {
     outline: none;
     border-color: #d40000;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #d40000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a00000;
 }
 
 .back-link {
