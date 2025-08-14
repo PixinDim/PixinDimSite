@@ -4,48 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register - Pixin Dim</title>
-  <link rel="stylesheet" href="style.css">
-  <!-- Firebase SDKs -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyA6iDXltaAXr-YbZlGSLEvgcxR4dJd0ge8",
-      authDomain: "pixindim-e910f.firebaseapp.com",
-      projectId: "pixindim-e910f",
-      storageBucket: "pixindim-e910f.firebasestorage.app",
-      messagingSenderId: "925384750308",
-      appId: "1:925384750308:web:890c766bf7a61118c528f1"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    window.registerUser = function(event) {
-      event.preventDefault();
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-
-      if(password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-      }
-
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          alert("Registration successful!");
-          window.location.href = "login.html";
-        })
-        .catch((error) => {
-          alert(error.message);
-        });
-    }
-  </script>
+  <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <!-- Hamburger Menu -->
   <div class="hamburger-menu">
     <div class="hamburger" onclick="toggleMenu()"><span></span></div>
     <div id="dropdown" class="dropdown-content">
@@ -58,15 +19,15 @@
 
   <section class="form-section fade-up">
     <h2>Register</h2>
-    <form onsubmit="registerUser(event)">
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
       <label for="email">Email</label>
-      <input type="email" id="email" required>
+      <input type="email" id="email" name="email" required>
 
       <label for="password">Password</label>
-      <input type="password" id="password" required>
-
-      <label for="confirmPassword">Confirm Password</label>
-      <input type="password" id="confirmPassword" required>
+      <input type="password" id="password" name="password" required>
 
       <button type="submit" class="btn">Register</button>
     </form>
