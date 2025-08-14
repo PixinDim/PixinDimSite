@@ -7,13 +7,27 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <div id="dropdown" class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <a href="about.html">About</a>
+        </div>
+    </div>
+
     <header>
         <h1>Place an Order</h1>
         <p>Custom PC Build Request</p>
     </header>
 
     <main>
-        <form class="form-box">
+        <form class="form-box" action="https://formsubmit.co/pixindim86@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Pixin Dim Order">
+            <input type="hidden" name="_captcha" value="false">
+
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Your name" required>
 
@@ -31,5 +45,12 @@
 
         <a href="index.html" class="back-link">⬅ Back to Home</a>
     </main>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("dropdown");
+            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+        }
+    </script>
 </body>
 </html>
