@@ -8,26 +8,28 @@
 </head>
 <body>
     <header>
-        <h1>Place a PC Build Order</h1>
+        <h1>Place an Order</h1>
+        <p>Custom PC Build Request</p>
     </header>
 
     <main>
-        <form>
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+        <form class="form-box">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
 
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required>
 
-            <label for="budget">Budget (€):</label>
-            <input type="number" id="budget" name="budget" required>
+            <label for="budget">Budget (€)</label>
+            <input type="number" id="budget" name="budget" placeholder="e.g. 1500" required>
 
-            <label for="details">Build Details / Preferences:</label>
-            <textarea id="details" name="details" required></textarea>
+            <label for="details">Details</label>
+            <textarea id="details" name="details" placeholder="Tell us what you want..." rows="5"></textarea>
 
-            <button type="submit">Submit Order</button>
+            <button type="submit" class="btn">Submit Order</button>
         </form>
-        <a href="index.html" class="back-link">← Back to Home</a>
+
+        <a href="index.html" class="back-link">⬅ Back to Home</a>
     </main>
 </body>
 </html>
