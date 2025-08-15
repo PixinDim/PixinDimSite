@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request an Upgrade - Pixin Dim</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Upgrade - Pixin Dim</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <div id="dropdown" class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="about.html">About</a>
-        </div>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <div class="hamburger" onclick="toggleMenu()"><span></span></div>
+    <div id="dropdown" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="about.html">About</a>
     </div>
+  </div>
 
-    <header>
-        <h1>Place an Upgrade</h1>
-        <p>Upgrade Your Existing PC</p>
-    </header>
+  <section class="form-section fade-up">
+    <h2>Request an Upgrade</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <main>
-        <form class="form-box" action="https://formsubmit.co/pixindim86@gmail.com" method="POST">
-            <input type="hidden" name="_subject" value="New Pixin Dim Upgrade">
-            <input type="hidden" name="_captcha" value="false">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required>
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+      <label for="currentPC">Current PC Specs</label>
+      <textarea id="currentPC" name="currentPC" rows="4" required></textarea>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <label for="upgradeDetails">Upgrade Request</label>
+      <textarea id="upgradeDetails" name="upgradeDetails" rows="4" required></textarea>
 
-            <label for="current-specs">Current PC Specs</label>
-            <textarea id="current-specs" name="current-specs" placeholder="CPU, GPU, RAM, etc." rows="4"></textarea>
+      <button type="submit" class="btn">Submit Upgrade</button>
+    </form>
+  </section>
 
-            <label for="upgrade-details">Upgrade Details</label>
-            <textarea id="upgrade-details" name="upgrade-details" placeholder="What do you want upgraded?" rows="4"></textarea>
-
-            <button type="submit" class="btn">Submit Upgrade</button>
-        </form>
-
-        <a href="index.html" class="back-link">⬅ Back to Home</a>
-    </main>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("dropdown");
-            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        }
-    </script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
