@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Place Order - Pixin Dim</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/main.css">
 </head>
 <body>
-  <!-- Hamburger Menu -->
+  <!-- Hamburger -->
   <div class="hamburger-menu">
     <div class="hamburger" onclick="toggleMenu()"><span></span></div>
     <div id="dropdown" class="dropdown-content">
@@ -18,20 +18,24 @@
     </div>
   </div>
 
+  <!-- Order Form -->
   <section class="form-section fade-up">
     <h2>Place Your Order</h2>
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="index.html">
+
       <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" name="name" id="name" required>
 
       <label for="email">Email</label>
-      <input type="email" id="email" name="_replyto" required>
+      <input type="email" name="email" id="email" required>
 
       <label for="budget">Budget (€)</label>
-      <input type="number" id="budget" name="budget" required>
+      <input type="number" name="budget" id="budget" required>
 
       <label for="details">Order Details</label>
-      <textarea id="details" name="details" rows="5" required></textarea>
+      <textarea name="details" id="details" rows="5" required></textarea>
 
       <button type="submit" class="btn">Submit Order</button>
     </form>
@@ -42,6 +46,17 @@
       const menu = document.getElementById("dropdown");
       menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
     }
+
+    const faders = document.querySelectorAll('.fade-up');
+    window.addEventListener('scroll', () => {
+      faders.forEach(fader => {
+        const top = fader.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        if(top < windowHeight - 50){
+          fader.classList.add('visible');
+        }
+      });
+    });
   </script>
 </body>
 </html>
