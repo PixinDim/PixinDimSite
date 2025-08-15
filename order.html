@@ -1,56 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place an Order - Pixin Dim</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Order - Pixin Dim</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hamburger Menu -->
-    <div class="hamburger-menu">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <div id="dropdown" class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="login.html">Login</a>
-            <a href="register.html">Register</a>
-            <a href="about.html">About</a>
-        </div>
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu">
+    <div class="hamburger" onclick="toggleMenu()"><span></span></div>
+    <div id="dropdown" class="dropdown-content">
+      <a href="index.html">Home</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <a href="about.html">About</a>
     </div>
+  </div>
 
-    <header>
-        <h1>Place an Order</h1>
-        <p>Custom PC Build Request</p>
-    </header>
+  <section class="form-section fade-up">
+    <h2>Place Your Order</h2>
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
 
-    <main>
-        <form class="form-box" action="https://formsubmit.co/youremail@example.com" method="POST">
-            <input type="hidden" name="_subject" value="New Pixin Dim Order">
-            <input type="hidden" name="_captcha" value="false">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" required>
 
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+      <label for="budget">Budget (€)</label>
+      <input type="number" id="budget" name="budget" required>
 
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <label for="details">Order Details</label>
+      <textarea id="details" name="details" rows="5" required></textarea>
 
-            <label for="budget">Budget (€)</label>
-            <input type="number" id="budget" name="budget" placeholder="e.g. 1500" required>
+      <button type="submit" class="btn">Submit Order</button>
+    </form>
+  </section>
 
-            <label for="details">Details</label>
-            <textarea id="details" name="details" placeholder="Tell us what you want..." rows="5"></textarea>
-
-            <button type="submit" class="btn">Submit Order</button>
-        </form>
-
-        <a href="index.html" class="back-link">⬅ Back to Home</a>
-    </main>
-
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById("dropdown");
-            menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
-        }
-    </script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("dropdown");
+      menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+  </script>
 </body>
 </html>
